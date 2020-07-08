@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" charset="utf-8">
+        //helloworld
+        //弹出警告框
+        //window.alert('hello javascript!');
+        //文档对象
+        //document.write('hello JavaScript！');
+        //打印到控制台
+        //console.log('javascript!');
+
+
+    </script>
+    <!--外部引入文件 src属性-->
+    <!--解析顺序 从上到下 边解析边执行-->
+    <!--延迟执行，defer可以延迟执行，当页面全部加载完毕后-->
+    <script type="text/javascript" charset="utf-8" defer="defer" src="./day01.js"></script>
+    <script type="text/javascript">
+    //会先执行引入js，再执行这个
+        alert('我是内部代码!!!');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
