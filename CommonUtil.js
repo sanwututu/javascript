@@ -107,7 +107,7 @@ SANWU.EventUtil = {
 
 
 /**
- * 扩展Array的原型对象 添加变量数组的每一个元素,并让每一个元素都执行fn函数 (可变量多维数组)
+ * 扩展Array的原型对象 添加遍历数组的每一个元素,并让每一个元素都执行fn函数 (可变量多维数组)
  * @param {Object} fn
  */
 Array.prototype.each = function(fn){
