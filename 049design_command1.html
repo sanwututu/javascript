@@ -13,14 +13,14 @@
 				//命令模式 必须实现接口 (execute)
 				//命令模式分类：简单命令模式、复杂命令模式(事物)、用闭包去封装命令模式(更加灵活的调用命令)
 				var CommandInterface = new SANWU.Interface('CommandInterface', ['execute']);
-				
+				mingl
 				//有一个按钮 点击按钮 触发几个元素去执行一些动画效果
 				//2个命令 (1 ：start) (2 : stop )
 				
 				//命令模式的主要概念： 调用者只需要执行相应的命令即可，不需要去关系命令到底怎么执行的
 				//                 执行者它才真正的去处理这条命令的内部实现
 				
-				/*
+				
 				var StartCommod = function(obj){
 					this.ad = obj;
 				};
@@ -39,11 +39,11 @@
 				startCommand.execute();	
 				var stopCommand = new StartCommod(obj);	
 				stopCommand.execute();
-				*/
+				
 				
 				
 				//闭包命令模式：
-				/*
+				
 				function MakeStart(obj){
 					return function(){
 						obj.start();
@@ -59,7 +59,7 @@
 				startCommand();	//命令开启了
 				var stopCommand = new MakeStop(obj);
 				stopCommand(); //命令结束了
-				*/
+				
 				
 				// 客户、调用者、接受者
 				// 客户创建命令 ，调用这个执行命令 ，接受者在命令执行时进行相应的操作
