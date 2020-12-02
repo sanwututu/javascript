@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //分号(;)可省略，最好还是加上
+        //双引号(""),单引号('')都可以用，但是最好保持一致
+        console.log("禁止浏览！");
+        console.log('禁止浏览！');
+        //单行注释
+        /*
+        多行注释
+        agasgvadfb
+        shgfjh
+
+        */
+
+        //变量的定义
+        //强类型，弱类型编程语言
+        //var/let + 变量名称 = value;
+        //var与let区别
+        //var是函数作用域，在整个函数中有效，
+        //var有变量提升效果
+
+        // console.log(age);
+        // var age = 18;
+
+        //不会报错，只是undefine
+        //相当于
+        /*
+        var age;
+        console.log(age);
+        age = 18;
+        */
+        //let是块级作用域(ES6后新增语法)
+        //一般建议用let 替换var
+
+        // var boyName = '路辰';
+        // var age = 18;
+        //驼峰式命名法:一般用小驼峰
+        //
+
+        //变量的数值类型
+        //typeof(变量)：判断变量类型
+        //console.log(typeof({}));//object
+        //
+
+        //=:赋值
+        //==:等号
+        //===:严格等于
+
+
+        //数组
+        // let arrNum = [];//建议用此方式
+        // let arrNum1 = new Array();
+
+        // let arrNum = [1,2,3,4,7,9];
+        // arrNum.push(10);//加在末尾
+
+        // for(let i = 0;i < arrNum.length; i++){
+
+        //     console.log('arrNum[i] =' + arrNum[i]);
+        // }
+
+        //第二种遍历方式，ES6.0
+        // for(let value of arrNum)
+        // {
+        //     console.log('value =' + value);
+        // }
+        // console.log("----------------");
+        // //
+        // //arrNum.splice(1,2);//从第一个索引开始，向后删除两个__1,2,3,4,7,9,10
+
+        // arrNum.splice(1,2,15,16,17,18,19);
+        // //在删除的后面开始插入1，15，16，17，18，19，4，7，9，10
+        // for(let value of arrNum)
+        // {
+        //     console.log('value =' + value);
+        // }
+
+        /*
+        let arrNum1 = [];
+        arrNum1[101] = 101;
+        console.log(arrNum1.length);//102
+        console.log(arrNum1[0]);//undefined
+
+        for(let value of arrNum1)
+        {
+            console.log('value =' + value);
+        }
+        */
+        //清空数组
+        //js底层垃圾回收器，没人使用会自动回收
+        //不要用arrNum1 = [];效果不好
+        //能不触发回收不要回收，消耗很大
+        //推荐使用: arrNum1.length = 0;
+
+        //函数
+        // function 函数名称(){
+
+        // }
+
+        // function arrName(arr){
+        //     //arguments会储存传进来的参数
+        //     console.log(arguments);
+        //     console.log(arguments[0]);
+        //     //console.log(arr);
+        // }
+
+        // //arrName(arrNum);
+
+        // arrName(arrNum,'122','FAGDFH');
+
+        // let arrName = function(name){
+        //     console.log(name);
+        // }
+
+
+        //闭包的作用：
+        //1.使函数外部可以访问函数内部的临时变量
+        //2.使函数内部临时变量得以保存
+        // function func1(){
+        //     let age = 1;
+        //     function func2(){
+        //         age++;
+        //         console.log('age = ' + age);
+        //     }
+        //     return func2;
+        // }
+
+        // let func3 = func1();
+
+        // for(let i =0; i<5;i++){
+        //     func3();
+        //     //2,3,4,5,6
+        // }
+
+        //
+        // var s = [];
+        // function foo(){
+        //     for(var i =0;i<3;i++){
+        //         s[i] = function(){
+        //             console.log(i);
+        //         }
+        //     }
+        // }
+
+        // foo();
+        // s[0]();//3
+        // s[1]();//3
+        // s[2]();//3
+        //因为绑定的同一个i，且是函数变量
+
+        //换成let，可输出0，1，2
+        //function foo(){
+        //     for(let i =0;i<3;i++){
+        //         s[i] = function(){
+        //             console.log(i);
+        //         }
+        //     }
+        // }
+
+
+        //立即执行函数
+        //也输出0，1，2
+        // var s = [];
+        // function foo(){
+        //     for(var i =0;i<3;i++){
+        //         s[i] = function(index){
+        //             return function(){
+        //                 console.log(index);
+        //             }
+        //         }(i);
+        //     }
+        // }
+
+        //变量提升
+        // var a = 10;
+
+        // (function(){
+        //     var a;
+        //     console.log(a);//undefined
+        //     a =5;
+        //     console.log(window.a);//10
+        //     a = 20;
+        //     console.log(a);//20
+        // })()
+
+        
+        //对象
+        // let teacher = {
+        //     name:'叶瑄',
+        //     age:888,
+        //     // print:function(){
+        //     //     console.log(this.name);
+        //     // },
+        //     //ES6.0新语法
+        //     print(){
+        //         console.log(this.name);
+        //     },
+        //     arrBoyFriend:['zs','ls'],
+        //     husband:{
+        //         name:'zs',
+        //         age:18
+        //     }
+        // }
+
+
+        //属性的访问：对象名，属性名，对象名[属性名(字符串)]
+        // console.log(teacher.name);
+        // console.log(teacher['name']);
+        // teacher.age = 20;
+        // teacher['age'] = 20;
+        // //删除属性
+        // delete teacher.arrBoyFriend;
+        // delete teacher['arrBoyFriend'];
+
+        //遍历属性
+        // for(let key in teacher){
+        //     console.log(key + ':' + teacher[key]);
+        // }
+        // //获取所有key数组
+        // let keys = Object.keys(teacher);
+        // console.log(keys);
+
+        // //
+        // let teacher1 = teacher;//指向同一块内存，类似引用传递
+        // teacher1.age = 20;
+        // console.log(teacher.age);//20
+
+        // let a = 5;
+        // let b = a;
+        // b = 8;
+        // console.log(a);//5
+
+        //js中只有number,string,boolean类型是值传递，其他都是引用传递。
+
+        // function func(obj){
+
+        //     this.params = obj;
+        //     obj.age = 20;
+        // }
+        // func(teacher);
+
+
+// let teacher1 = {
+//     name:'zs',
+//     age:20,
+// }
+
+// //this
+// //谁调用指向谁
+// teacher1.print = teacher.print;
+// teacher1.print();//zs
+
+//手动绑定
+//通过bind可以把函数的this强制绑定为某个对象
+// teacher1.print = teacher.print.bind(teacher);
+// teacher1.print();//叶瑄
+
+// //call,apply会立即执行
+// teacher1.print = teacher.print;
+// teacher1.print().apply(teacher);//叶瑄
+// teacher1.print().call(teacher);//叶瑄
+
+//this指向window对象，是一个全局对象，window指向浏览器窗口对象
+// let print = teacher.print;
+// print();//空
+//window.print();
+//window里有默认属性name是空
+
+//若window.age会undefined
+
+
+
+//箭头函数
+// let func = ( )=>{
+// console.log('zs');
+// }
+// func();
+
+//类ES6.0
+//命名规范：类或类型一般用大驼峰命名，变量用小驼峰命名
+//类的访问属性全是公有
+class People{
+    //构造函数
+    constructor(name){
+        //成员变量
+        this.name = name;
+    }//这里不要逗号（，），会报错
+
+    print(){
+        console.log(this.name);
+    }
+}
+
+class Teacher extends People{
+
+    constructor(name){
+        super(name);
+    }
+    print(){
+        super.print();
+        console.log('hello！world');
+    }
+}
+
+let teacher2 = new Teacher('你好呀');
+//console.log(teacher2.name);
+teacher2.print();
+
+    </script>
+</body>
+</html>
